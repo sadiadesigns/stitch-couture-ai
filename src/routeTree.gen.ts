@@ -9,38 +9,213 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as DesignerRouteImport } from './routes/designer'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TailorsIndexRouteImport } from './routes/tailors/index'
+import { Route as OrdersIndexRouteImport } from './routes/orders/index'
+import { Route as TailorsIdRouteImport } from './routes/tailors/$id'
+import { Route as OrdersIdRouteImport } from './routes/orders/$id'
+import { Route as DashboardTailorRouteImport } from './routes/dashboard/tailor'
+import { Route as DashboardAssistantRouteImport } from './routes/dashboard/assistant'
+import { Route as DashboardAdminRouteImport } from './routes/dashboard/admin'
 
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignerRoute = DesignerRouteImport.update({
+  id: '/designer',
+  path: '/designer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TailorsIndexRoute = TailorsIndexRouteImport.update({
+  id: '/tailors/',
+  path: '/tailors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersIndexRoute = OrdersIndexRouteImport.update({
+  id: '/orders/',
+  path: '/orders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TailorsIdRoute = TailorsIdRouteImport.update({
+  id: '/tailors/$id',
+  path: '/tailors/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersIdRoute = OrdersIdRouteImport.update({
+  id: '/orders/$id',
+  path: '/orders/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardTailorRoute = DashboardTailorRouteImport.update({
+  id: '/dashboard/tailor',
+  path: '/dashboard/tailor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardAssistantRoute = DashboardAssistantRouteImport.update({
+  id: '/dashboard/assistant',
+  path: '/dashboard/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardAdminRoute = DashboardAdminRouteImport.update({
+  id: '/dashboard/admin',
+  path: '/dashboard/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/book': typeof BookRoute
+  '/designer': typeof DesignerRoute
+  '/profile': typeof ProfileRoute
+  '/dashboard/admin': typeof DashboardAdminRoute
+  '/dashboard/assistant': typeof DashboardAssistantRoute
+  '/dashboard/tailor': typeof DashboardTailorRoute
+  '/orders/$id': typeof OrdersIdRoute
+  '/tailors/$id': typeof TailorsIdRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/tailors/': typeof TailorsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/book': typeof BookRoute
+  '/designer': typeof DesignerRoute
+  '/profile': typeof ProfileRoute
+  '/dashboard/admin': typeof DashboardAdminRoute
+  '/dashboard/assistant': typeof DashboardAssistantRoute
+  '/dashboard/tailor': typeof DashboardTailorRoute
+  '/orders/$id': typeof OrdersIdRoute
+  '/tailors/$id': typeof TailorsIdRoute
+  '/orders': typeof OrdersIndexRoute
+  '/tailors': typeof TailorsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/book': typeof BookRoute
+  '/designer': typeof DesignerRoute
+  '/profile': typeof ProfileRoute
+  '/dashboard/admin': typeof DashboardAdminRoute
+  '/dashboard/assistant': typeof DashboardAssistantRoute
+  '/dashboard/tailor': typeof DashboardTailorRoute
+  '/orders/$id': typeof OrdersIdRoute
+  '/tailors/$id': typeof TailorsIdRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/tailors/': typeof TailorsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/book'
+    | '/designer'
+    | '/profile'
+    | '/dashboard/admin'
+    | '/dashboard/assistant'
+    | '/dashboard/tailor'
+    | '/orders/$id'
+    | '/tailors/$id'
+    | '/orders/'
+    | '/tailors/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/book'
+    | '/designer'
+    | '/profile'
+    | '/dashboard/admin'
+    | '/dashboard/assistant'
+    | '/dashboard/tailor'
+    | '/orders/$id'
+    | '/tailors/$id'
+    | '/orders'
+    | '/tailors'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/book'
+    | '/designer'
+    | '/profile'
+    | '/dashboard/admin'
+    | '/dashboard/assistant'
+    | '/dashboard/tailor'
+    | '/orders/$id'
+    | '/tailors/$id'
+    | '/orders/'
+    | '/tailors/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  BookRoute: typeof BookRoute
+  DesignerRoute: typeof DesignerRoute
+  ProfileRoute: typeof ProfileRoute
+  DashboardAdminRoute: typeof DashboardAdminRoute
+  DashboardAssistantRoute: typeof DashboardAssistantRoute
+  DashboardTailorRoute: typeof DashboardTailorRoute
+  OrdersIdRoute: typeof OrdersIdRoute
+  TailorsIdRoute: typeof TailorsIdRoute
+  OrdersIndexRoute: typeof OrdersIndexRoute
+  TailorsIndexRoute: typeof TailorsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/designer': {
+      id: '/designer'
+      path: '/designer'
+      fullPath: '/designer'
+      preLoaderRoute: typeof DesignerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +223,72 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tailors/': {
+      id: '/tailors/'
+      path: '/tailors'
+      fullPath: '/tailors/'
+      preLoaderRoute: typeof TailorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders/': {
+      id: '/orders/'
+      path: '/orders'
+      fullPath: '/orders/'
+      preLoaderRoute: typeof OrdersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tailors/$id': {
+      id: '/tailors/$id'
+      path: '/tailors/$id'
+      fullPath: '/tailors/$id'
+      preLoaderRoute: typeof TailorsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders/$id': {
+      id: '/orders/$id'
+      path: '/orders/$id'
+      fullPath: '/orders/$id'
+      preLoaderRoute: typeof OrdersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/tailor': {
+      id: '/dashboard/tailor'
+      path: '/dashboard/tailor'
+      fullPath: '/dashboard/tailor'
+      preLoaderRoute: typeof DashboardTailorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/assistant': {
+      id: '/dashboard/assistant'
+      path: '/dashboard/assistant'
+      fullPath: '/dashboard/assistant'
+      preLoaderRoute: typeof DashboardAssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/admin': {
+      id: '/dashboard/admin'
+      path: '/dashboard/admin'
+      fullPath: '/dashboard/admin'
+      preLoaderRoute: typeof DashboardAdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  BookRoute: BookRoute,
+  DesignerRoute: DesignerRoute,
+  ProfileRoute: ProfileRoute,
+  DashboardAdminRoute: DashboardAdminRoute,
+  DashboardAssistantRoute: DashboardAssistantRoute,
+  DashboardTailorRoute: DashboardTailorRoute,
+  OrdersIdRoute: OrdersIdRoute,
+  TailorsIdRoute: TailorsIdRoute,
+  OrdersIndexRoute: OrdersIndexRoute,
+  TailorsIndexRoute: TailorsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
