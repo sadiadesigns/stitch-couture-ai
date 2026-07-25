@@ -1,6 +1,8 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Mail, Apple } from "lucide-react";
 import { heroImages } from "@/lib/mock-data";
+import stitchLogo from "@/assets/stitch-logo.png";
+
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
