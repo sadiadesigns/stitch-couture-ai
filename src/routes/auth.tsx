@@ -1,6 +1,8 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Mail, Apple } from "lucide-react";
 import { heroImages } from "@/lib/mock-data";
+import stitchLogo from "@/assets/stitch-logo.png";
+
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -21,8 +23,9 @@ function Auth() {
           <img src={heroImages.design1} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
           <div className="absolute top-14 left-6">
-            <span className="text-white font-black text-4xl tracking-tight">stitch<span className="text-primary-foreground">.</span></span>
+            <img src={stitchLogo} alt="Stitch" className="h-10 w-auto brightness-0 invert" />
           </div>
+
           <div className="absolute bottom-8 left-6 right-6">
             <h1 className="text-white text-4xl font-bold leading-tight">Custom tailoring,<br/>made simple.</h1>
           </div>
