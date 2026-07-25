@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       { title: "Stitch — Custom Tailoring Made Simple" },
       { name: "description", content: "Discover verified tailors, design outfits with AI, and get perfectly tailored clothing delivered to your door." },
       { property: "og:title", content: "Stitch — Custom Tailoring Made Simple" },
-      { property: "og:description", content: "AI-powered tailoring marketplace with verified master tailors and home measurements." },
+      { property: "og:description", content: "Discover verified tailors, design outfits with AI, and get perfectly tailored clothing delivered to your door." },
     ],
   }),
   component: Home,
