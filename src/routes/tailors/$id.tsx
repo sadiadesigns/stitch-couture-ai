@@ -77,7 +77,7 @@ function TailorDetail() {
         <section className="px-6 mt-8">
           <h3 className="text-lg font-bold mb-3">Portfolio</h3>
           <div className="grid grid-cols-2 gap-3">
-            {t.portfolio.map((p, i) => (
+            {t.portfolio.map((p: string, i: number) => (
               <div key={i} className={`rounded-3xl overflow-hidden bg-secondary ${i === 0 ? "col-span-2 aspect-[4/3]" : "aspect-square"}`}>
                 <img src={p} alt="" className="w-full h-full object-cover" loading="lazy" />
               </div>
