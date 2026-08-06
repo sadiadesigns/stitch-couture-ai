@@ -30,10 +30,13 @@ import { Route as AppTailorDashboardRouteImport } from './routes/app/tailor/dash
 import { Route as AppTailorAppointmentsRouteImport } from './routes/app/tailor/appointments'
 import { Route as AppAdminVerificationRouteImport } from './routes/app/admin/verification'
 import { Route as AppAdminUsersRouteImport } from './routes/app/admin/users'
+import { Route as AppAdminSettingsRouteImport } from './routes/app/admin/settings'
+import { Route as AppAdminPaymentsRouteImport } from './routes/app/admin/payments'
 import { Route as AppAdminOrdersRouteImport } from './routes/app/admin/orders'
 import { Route as AppAdminDashboardRouteImport } from './routes/app/admin/dashboard'
 import { Route as AppAdminComplaintsRouteImport } from './routes/app/admin/complaints'
 import { Route as AppAdminAppointmentsRouteImport } from './routes/app/admin/appointments'
+import { Route as AppAdminAnalyticsRouteImport } from './routes/app/admin/analytics'
 import { Route as AppTailorOrdersIndexRouteImport } from './routes/app/tailor/orders/index'
 import { Route as AppTailorCustomersIndexRouteImport } from './routes/app/tailor/customers/index'
 import { Route as AppTailorOrdersIdRouteImport } from './routes/app/tailor/orders/$id'
@@ -144,6 +147,16 @@ const AppAdminUsersRoute = AppAdminUsersRouteImport.update({
   path: '/app/admin/users',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppAdminSettingsRoute = AppAdminSettingsRouteImport.update({
+  id: '/app/admin/settings',
+  path: '/app/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminPaymentsRoute = AppAdminPaymentsRouteImport.update({
+  id: '/app/admin/payments',
+  path: '/app/admin/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppAdminOrdersRoute = AppAdminOrdersRouteImport.update({
   id: '/app/admin/orders',
   path: '/app/admin/orders',
@@ -162,6 +175,11 @@ const AppAdminComplaintsRoute = AppAdminComplaintsRouteImport.update({
 const AppAdminAppointmentsRoute = AppAdminAppointmentsRouteImport.update({
   id: '/app/admin/appointments',
   path: '/app/admin/appointments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminAnalyticsRoute = AppAdminAnalyticsRouteImport.update({
+  id: '/app/admin/analytics',
+  path: '/app/admin/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppTailorOrdersIndexRoute = AppTailorOrdersIndexRouteImport.update({
@@ -199,10 +217,13 @@ export interface FileRoutesByFullPath {
   '/app/': typeof AppIndexRoute
   '/orders/': typeof OrdersIndexRoute
   '/tailors/': typeof TailorsIndexRoute
+  '/app/admin/analytics': typeof AppAdminAnalyticsRoute
   '/app/admin/appointments': typeof AppAdminAppointmentsRoute
   '/app/admin/complaints': typeof AppAdminComplaintsRoute
   '/app/admin/dashboard': typeof AppAdminDashboardRoute
   '/app/admin/orders': typeof AppAdminOrdersRoute
+  '/app/admin/payments': typeof AppAdminPaymentsRoute
+  '/app/admin/settings': typeof AppAdminSettingsRoute
   '/app/admin/users': typeof AppAdminUsersRoute
   '/app/admin/verification': typeof AppAdminVerificationRoute
   '/app/tailor/appointments': typeof AppTailorAppointmentsRoute
@@ -230,10 +251,13 @@ export interface FileRoutesByTo {
   '/app': typeof AppIndexRoute
   '/orders': typeof OrdersIndexRoute
   '/tailors': typeof TailorsIndexRoute
+  '/app/admin/analytics': typeof AppAdminAnalyticsRoute
   '/app/admin/appointments': typeof AppAdminAppointmentsRoute
   '/app/admin/complaints': typeof AppAdminComplaintsRoute
   '/app/admin/dashboard': typeof AppAdminDashboardRoute
   '/app/admin/orders': typeof AppAdminOrdersRoute
+  '/app/admin/payments': typeof AppAdminPaymentsRoute
+  '/app/admin/settings': typeof AppAdminSettingsRoute
   '/app/admin/users': typeof AppAdminUsersRoute
   '/app/admin/verification': typeof AppAdminVerificationRoute
   '/app/tailor/appointments': typeof AppTailorAppointmentsRoute
@@ -262,10 +286,13 @@ export interface FileRoutesById {
   '/app/': typeof AppIndexRoute
   '/orders/': typeof OrdersIndexRoute
   '/tailors/': typeof TailorsIndexRoute
+  '/app/admin/analytics': typeof AppAdminAnalyticsRoute
   '/app/admin/appointments': typeof AppAdminAppointmentsRoute
   '/app/admin/complaints': typeof AppAdminComplaintsRoute
   '/app/admin/dashboard': typeof AppAdminDashboardRoute
   '/app/admin/orders': typeof AppAdminOrdersRoute
+  '/app/admin/payments': typeof AppAdminPaymentsRoute
+  '/app/admin/settings': typeof AppAdminSettingsRoute
   '/app/admin/users': typeof AppAdminUsersRoute
   '/app/admin/verification': typeof AppAdminVerificationRoute
   '/app/tailor/appointments': typeof AppTailorAppointmentsRoute
@@ -295,10 +322,13 @@ export interface FileRouteTypes {
     | '/app/'
     | '/orders/'
     | '/tailors/'
+    | '/app/admin/analytics'
     | '/app/admin/appointments'
     | '/app/admin/complaints'
     | '/app/admin/dashboard'
     | '/app/admin/orders'
+    | '/app/admin/payments'
+    | '/app/admin/settings'
     | '/app/admin/users'
     | '/app/admin/verification'
     | '/app/tailor/appointments'
@@ -326,10 +356,13 @@ export interface FileRouteTypes {
     | '/app'
     | '/orders'
     | '/tailors'
+    | '/app/admin/analytics'
     | '/app/admin/appointments'
     | '/app/admin/complaints'
     | '/app/admin/dashboard'
     | '/app/admin/orders'
+    | '/app/admin/payments'
+    | '/app/admin/settings'
     | '/app/admin/users'
     | '/app/admin/verification'
     | '/app/tailor/appointments'
@@ -357,10 +390,13 @@ export interface FileRouteTypes {
     | '/app/'
     | '/orders/'
     | '/tailors/'
+    | '/app/admin/analytics'
     | '/app/admin/appointments'
     | '/app/admin/complaints'
     | '/app/admin/dashboard'
     | '/app/admin/orders'
+    | '/app/admin/payments'
+    | '/app/admin/settings'
     | '/app/admin/users'
     | '/app/admin/verification'
     | '/app/tailor/appointments'
@@ -389,10 +425,13 @@ export interface RootRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   OrdersIndexRoute: typeof OrdersIndexRoute
   TailorsIndexRoute: typeof TailorsIndexRoute
+  AppAdminAnalyticsRoute: typeof AppAdminAnalyticsRoute
   AppAdminAppointmentsRoute: typeof AppAdminAppointmentsRoute
   AppAdminComplaintsRoute: typeof AppAdminComplaintsRoute
   AppAdminDashboardRoute: typeof AppAdminDashboardRoute
   AppAdminOrdersRoute: typeof AppAdminOrdersRoute
+  AppAdminPaymentsRoute: typeof AppAdminPaymentsRoute
+  AppAdminSettingsRoute: typeof AppAdminSettingsRoute
   AppAdminUsersRoute: typeof AppAdminUsersRoute
   AppAdminVerificationRoute: typeof AppAdminVerificationRoute
   AppTailorAppointmentsRoute: typeof AppTailorAppointmentsRoute
@@ -556,6 +595,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminUsersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/admin/settings': {
+      id: '/app/admin/settings'
+      path: '/app/admin/settings'
+      fullPath: '/app/admin/settings'
+      preLoaderRoute: typeof AppAdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/payments': {
+      id: '/app/admin/payments'
+      path: '/app/admin/payments'
+      fullPath: '/app/admin/payments'
+      preLoaderRoute: typeof AppAdminPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app/admin/orders': {
       id: '/app/admin/orders'
       path: '/app/admin/orders'
@@ -582,6 +635,13 @@ declare module '@tanstack/react-router' {
       path: '/app/admin/appointments'
       fullPath: '/app/admin/appointments'
       preLoaderRoute: typeof AppAdminAppointmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/analytics': {
+      id: '/app/admin/analytics'
+      path: '/app/admin/analytics'
+      fullPath: '/app/admin/analytics'
+      preLoaderRoute: typeof AppAdminAnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app/tailor/orders/': {
@@ -629,10 +689,13 @@ const rootRouteChildren: RootRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   OrdersIndexRoute: OrdersIndexRoute,
   TailorsIndexRoute: TailorsIndexRoute,
+  AppAdminAnalyticsRoute: AppAdminAnalyticsRoute,
   AppAdminAppointmentsRoute: AppAdminAppointmentsRoute,
   AppAdminComplaintsRoute: AppAdminComplaintsRoute,
   AppAdminDashboardRoute: AppAdminDashboardRoute,
   AppAdminOrdersRoute: AppAdminOrdersRoute,
+  AppAdminPaymentsRoute: AppAdminPaymentsRoute,
+  AppAdminSettingsRoute: AppAdminSettingsRoute,
   AppAdminUsersRoute: AppAdminUsersRoute,
   AppAdminVerificationRoute: AppAdminVerificationRoute,
   AppTailorAppointmentsRoute: AppTailorAppointmentsRoute,
