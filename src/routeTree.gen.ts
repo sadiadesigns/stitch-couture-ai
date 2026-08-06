@@ -16,11 +16,28 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TailorsIndexRouteImport } from './routes/tailors/index'
 import { Route as OrdersIndexRouteImport } from './routes/orders/index'
+import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as TailorsIdRouteImport } from './routes/tailors/$id'
 import { Route as OrdersIdRouteImport } from './routes/orders/$id'
 import { Route as DashboardTailorRouteImport } from './routes/dashboard/tailor'
 import { Route as DashboardAssistantRouteImport } from './routes/dashboard/assistant'
 import { Route as DashboardAdminRouteImport } from './routes/dashboard/admin'
+import { Route as AppTailorSettingsRouteImport } from './routes/app/tailor/settings'
+import { Route as AppTailorReviewsRouteImport } from './routes/app/tailor/reviews'
+import { Route as AppTailorProfileRouteImport } from './routes/app/tailor/profile'
+import { Route as AppTailorEarningsRouteImport } from './routes/app/tailor/earnings'
+import { Route as AppTailorDashboardRouteImport } from './routes/app/tailor/dashboard'
+import { Route as AppTailorAppointmentsRouteImport } from './routes/app/tailor/appointments'
+import { Route as AppAdminVerificationRouteImport } from './routes/app/admin/verification'
+import { Route as AppAdminUsersRouteImport } from './routes/app/admin/users'
+import { Route as AppAdminOrdersRouteImport } from './routes/app/admin/orders'
+import { Route as AppAdminDashboardRouteImport } from './routes/app/admin/dashboard'
+import { Route as AppAdminComplaintsRouteImport } from './routes/app/admin/complaints'
+import { Route as AppAdminAppointmentsRouteImport } from './routes/app/admin/appointments'
+import { Route as AppTailorOrdersIndexRouteImport } from './routes/app/tailor/orders/index'
+import { Route as AppTailorCustomersIndexRouteImport } from './routes/app/tailor/customers/index'
+import { Route as AppTailorOrdersIdRouteImport } from './routes/app/tailor/orders/$id'
+import { Route as AppTailorCustomersIdRouteImport } from './routes/app/tailor/customers/$id'
 
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
@@ -57,6 +74,11 @@ const OrdersIndexRoute = OrdersIndexRouteImport.update({
   path: '/orders/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/app/',
+  path: '/app/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TailorsIdRoute = TailorsIdRouteImport.update({
   id: '/tailors/$id',
   path: '/tailors/$id',
@@ -82,6 +104,86 @@ const DashboardAdminRoute = DashboardAdminRouteImport.update({
   path: '/dashboard/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppTailorSettingsRoute = AppTailorSettingsRouteImport.update({
+  id: '/app/tailor/settings',
+  path: '/app/tailor/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorReviewsRoute = AppTailorReviewsRouteImport.update({
+  id: '/app/tailor/reviews',
+  path: '/app/tailor/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorProfileRoute = AppTailorProfileRouteImport.update({
+  id: '/app/tailor/profile',
+  path: '/app/tailor/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorEarningsRoute = AppTailorEarningsRouteImport.update({
+  id: '/app/tailor/earnings',
+  path: '/app/tailor/earnings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorDashboardRoute = AppTailorDashboardRouteImport.update({
+  id: '/app/tailor/dashboard',
+  path: '/app/tailor/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorAppointmentsRoute = AppTailorAppointmentsRouteImport.update({
+  id: '/app/tailor/appointments',
+  path: '/app/tailor/appointments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminVerificationRoute = AppAdminVerificationRouteImport.update({
+  id: '/app/admin/verification',
+  path: '/app/admin/verification',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminUsersRoute = AppAdminUsersRouteImport.update({
+  id: '/app/admin/users',
+  path: '/app/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminOrdersRoute = AppAdminOrdersRouteImport.update({
+  id: '/app/admin/orders',
+  path: '/app/admin/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminDashboardRoute = AppAdminDashboardRouteImport.update({
+  id: '/app/admin/dashboard',
+  path: '/app/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminComplaintsRoute = AppAdminComplaintsRouteImport.update({
+  id: '/app/admin/complaints',
+  path: '/app/admin/complaints',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminAppointmentsRoute = AppAdminAppointmentsRouteImport.update({
+  id: '/app/admin/appointments',
+  path: '/app/admin/appointments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorOrdersIndexRoute = AppTailorOrdersIndexRouteImport.update({
+  id: '/app/tailor/orders/',
+  path: '/app/tailor/orders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorCustomersIndexRoute = AppTailorCustomersIndexRouteImport.update({
+  id: '/app/tailor/customers/',
+  path: '/app/tailor/customers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorOrdersIdRoute = AppTailorOrdersIdRouteImport.update({
+  id: '/app/tailor/orders/$id',
+  path: '/app/tailor/orders/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTailorCustomersIdRoute = AppTailorCustomersIdRouteImport.update({
+  id: '/app/tailor/customers/$id',
+  path: '/app/tailor/customers/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -94,8 +196,25 @@ export interface FileRoutesByFullPath {
   '/dashboard/tailor': typeof DashboardTailorRoute
   '/orders/$id': typeof OrdersIdRoute
   '/tailors/$id': typeof TailorsIdRoute
+  '/app/': typeof AppIndexRoute
   '/orders/': typeof OrdersIndexRoute
   '/tailors/': typeof TailorsIndexRoute
+  '/app/admin/appointments': typeof AppAdminAppointmentsRoute
+  '/app/admin/complaints': typeof AppAdminComplaintsRoute
+  '/app/admin/dashboard': typeof AppAdminDashboardRoute
+  '/app/admin/orders': typeof AppAdminOrdersRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/admin/verification': typeof AppAdminVerificationRoute
+  '/app/tailor/appointments': typeof AppTailorAppointmentsRoute
+  '/app/tailor/dashboard': typeof AppTailorDashboardRoute
+  '/app/tailor/earnings': typeof AppTailorEarningsRoute
+  '/app/tailor/profile': typeof AppTailorProfileRoute
+  '/app/tailor/reviews': typeof AppTailorReviewsRoute
+  '/app/tailor/settings': typeof AppTailorSettingsRoute
+  '/app/tailor/customers/$id': typeof AppTailorCustomersIdRoute
+  '/app/tailor/orders/$id': typeof AppTailorOrdersIdRoute
+  '/app/tailor/customers/': typeof AppTailorCustomersIndexRoute
+  '/app/tailor/orders/': typeof AppTailorOrdersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -108,8 +227,25 @@ export interface FileRoutesByTo {
   '/dashboard/tailor': typeof DashboardTailorRoute
   '/orders/$id': typeof OrdersIdRoute
   '/tailors/$id': typeof TailorsIdRoute
+  '/app': typeof AppIndexRoute
   '/orders': typeof OrdersIndexRoute
   '/tailors': typeof TailorsIndexRoute
+  '/app/admin/appointments': typeof AppAdminAppointmentsRoute
+  '/app/admin/complaints': typeof AppAdminComplaintsRoute
+  '/app/admin/dashboard': typeof AppAdminDashboardRoute
+  '/app/admin/orders': typeof AppAdminOrdersRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/admin/verification': typeof AppAdminVerificationRoute
+  '/app/tailor/appointments': typeof AppTailorAppointmentsRoute
+  '/app/tailor/dashboard': typeof AppTailorDashboardRoute
+  '/app/tailor/earnings': typeof AppTailorEarningsRoute
+  '/app/tailor/profile': typeof AppTailorProfileRoute
+  '/app/tailor/reviews': typeof AppTailorReviewsRoute
+  '/app/tailor/settings': typeof AppTailorSettingsRoute
+  '/app/tailor/customers/$id': typeof AppTailorCustomersIdRoute
+  '/app/tailor/orders/$id': typeof AppTailorOrdersIdRoute
+  '/app/tailor/customers': typeof AppTailorCustomersIndexRoute
+  '/app/tailor/orders': typeof AppTailorOrdersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -123,8 +259,25 @@ export interface FileRoutesById {
   '/dashboard/tailor': typeof DashboardTailorRoute
   '/orders/$id': typeof OrdersIdRoute
   '/tailors/$id': typeof TailorsIdRoute
+  '/app/': typeof AppIndexRoute
   '/orders/': typeof OrdersIndexRoute
   '/tailors/': typeof TailorsIndexRoute
+  '/app/admin/appointments': typeof AppAdminAppointmentsRoute
+  '/app/admin/complaints': typeof AppAdminComplaintsRoute
+  '/app/admin/dashboard': typeof AppAdminDashboardRoute
+  '/app/admin/orders': typeof AppAdminOrdersRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/admin/verification': typeof AppAdminVerificationRoute
+  '/app/tailor/appointments': typeof AppTailorAppointmentsRoute
+  '/app/tailor/dashboard': typeof AppTailorDashboardRoute
+  '/app/tailor/earnings': typeof AppTailorEarningsRoute
+  '/app/tailor/profile': typeof AppTailorProfileRoute
+  '/app/tailor/reviews': typeof AppTailorReviewsRoute
+  '/app/tailor/settings': typeof AppTailorSettingsRoute
+  '/app/tailor/customers/$id': typeof AppTailorCustomersIdRoute
+  '/app/tailor/orders/$id': typeof AppTailorOrdersIdRoute
+  '/app/tailor/customers/': typeof AppTailorCustomersIndexRoute
+  '/app/tailor/orders/': typeof AppTailorOrdersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -139,8 +292,25 @@ export interface FileRouteTypes {
     | '/dashboard/tailor'
     | '/orders/$id'
     | '/tailors/$id'
+    | '/app/'
     | '/orders/'
     | '/tailors/'
+    | '/app/admin/appointments'
+    | '/app/admin/complaints'
+    | '/app/admin/dashboard'
+    | '/app/admin/orders'
+    | '/app/admin/users'
+    | '/app/admin/verification'
+    | '/app/tailor/appointments'
+    | '/app/tailor/dashboard'
+    | '/app/tailor/earnings'
+    | '/app/tailor/profile'
+    | '/app/tailor/reviews'
+    | '/app/tailor/settings'
+    | '/app/tailor/customers/$id'
+    | '/app/tailor/orders/$id'
+    | '/app/tailor/customers/'
+    | '/app/tailor/orders/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -153,8 +323,25 @@ export interface FileRouteTypes {
     | '/dashboard/tailor'
     | '/orders/$id'
     | '/tailors/$id'
+    | '/app'
     | '/orders'
     | '/tailors'
+    | '/app/admin/appointments'
+    | '/app/admin/complaints'
+    | '/app/admin/dashboard'
+    | '/app/admin/orders'
+    | '/app/admin/users'
+    | '/app/admin/verification'
+    | '/app/tailor/appointments'
+    | '/app/tailor/dashboard'
+    | '/app/tailor/earnings'
+    | '/app/tailor/profile'
+    | '/app/tailor/reviews'
+    | '/app/tailor/settings'
+    | '/app/tailor/customers/$id'
+    | '/app/tailor/orders/$id'
+    | '/app/tailor/customers'
+    | '/app/tailor/orders'
   id:
     | '__root__'
     | '/'
@@ -167,8 +354,25 @@ export interface FileRouteTypes {
     | '/dashboard/tailor'
     | '/orders/$id'
     | '/tailors/$id'
+    | '/app/'
     | '/orders/'
     | '/tailors/'
+    | '/app/admin/appointments'
+    | '/app/admin/complaints'
+    | '/app/admin/dashboard'
+    | '/app/admin/orders'
+    | '/app/admin/users'
+    | '/app/admin/verification'
+    | '/app/tailor/appointments'
+    | '/app/tailor/dashboard'
+    | '/app/tailor/earnings'
+    | '/app/tailor/profile'
+    | '/app/tailor/reviews'
+    | '/app/tailor/settings'
+    | '/app/tailor/customers/$id'
+    | '/app/tailor/orders/$id'
+    | '/app/tailor/customers/'
+    | '/app/tailor/orders/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -182,8 +386,25 @@ export interface RootRouteChildren {
   DashboardTailorRoute: typeof DashboardTailorRoute
   OrdersIdRoute: typeof OrdersIdRoute
   TailorsIdRoute: typeof TailorsIdRoute
+  AppIndexRoute: typeof AppIndexRoute
   OrdersIndexRoute: typeof OrdersIndexRoute
   TailorsIndexRoute: typeof TailorsIndexRoute
+  AppAdminAppointmentsRoute: typeof AppAdminAppointmentsRoute
+  AppAdminComplaintsRoute: typeof AppAdminComplaintsRoute
+  AppAdminDashboardRoute: typeof AppAdminDashboardRoute
+  AppAdminOrdersRoute: typeof AppAdminOrdersRoute
+  AppAdminUsersRoute: typeof AppAdminUsersRoute
+  AppAdminVerificationRoute: typeof AppAdminVerificationRoute
+  AppTailorAppointmentsRoute: typeof AppTailorAppointmentsRoute
+  AppTailorDashboardRoute: typeof AppTailorDashboardRoute
+  AppTailorEarningsRoute: typeof AppTailorEarningsRoute
+  AppTailorProfileRoute: typeof AppTailorProfileRoute
+  AppTailorReviewsRoute: typeof AppTailorReviewsRoute
+  AppTailorSettingsRoute: typeof AppTailorSettingsRoute
+  AppTailorCustomersIdRoute: typeof AppTailorCustomersIdRoute
+  AppTailorOrdersIdRoute: typeof AppTailorOrdersIdRoute
+  AppTailorCustomersIndexRoute: typeof AppTailorCustomersIndexRoute
+  AppTailorOrdersIndexRoute: typeof AppTailorOrdersIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -237,6 +458,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrdersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/app'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tailors/$id': {
       id: '/tailors/$id'
       path: '/tailors/$id'
@@ -272,6 +500,118 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/tailor/settings': {
+      id: '/app/tailor/settings'
+      path: '/app/tailor/settings'
+      fullPath: '/app/tailor/settings'
+      preLoaderRoute: typeof AppTailorSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/reviews': {
+      id: '/app/tailor/reviews'
+      path: '/app/tailor/reviews'
+      fullPath: '/app/tailor/reviews'
+      preLoaderRoute: typeof AppTailorReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/profile': {
+      id: '/app/tailor/profile'
+      path: '/app/tailor/profile'
+      fullPath: '/app/tailor/profile'
+      preLoaderRoute: typeof AppTailorProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/earnings': {
+      id: '/app/tailor/earnings'
+      path: '/app/tailor/earnings'
+      fullPath: '/app/tailor/earnings'
+      preLoaderRoute: typeof AppTailorEarningsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/dashboard': {
+      id: '/app/tailor/dashboard'
+      path: '/app/tailor/dashboard'
+      fullPath: '/app/tailor/dashboard'
+      preLoaderRoute: typeof AppTailorDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/appointments': {
+      id: '/app/tailor/appointments'
+      path: '/app/tailor/appointments'
+      fullPath: '/app/tailor/appointments'
+      preLoaderRoute: typeof AppTailorAppointmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/verification': {
+      id: '/app/admin/verification'
+      path: '/app/admin/verification'
+      fullPath: '/app/admin/verification'
+      preLoaderRoute: typeof AppAdminVerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/users': {
+      id: '/app/admin/users'
+      path: '/app/admin/users'
+      fullPath: '/app/admin/users'
+      preLoaderRoute: typeof AppAdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/orders': {
+      id: '/app/admin/orders'
+      path: '/app/admin/orders'
+      fullPath: '/app/admin/orders'
+      preLoaderRoute: typeof AppAdminOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/dashboard': {
+      id: '/app/admin/dashboard'
+      path: '/app/admin/dashboard'
+      fullPath: '/app/admin/dashboard'
+      preLoaderRoute: typeof AppAdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/complaints': {
+      id: '/app/admin/complaints'
+      path: '/app/admin/complaints'
+      fullPath: '/app/admin/complaints'
+      preLoaderRoute: typeof AppAdminComplaintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/appointments': {
+      id: '/app/admin/appointments'
+      path: '/app/admin/appointments'
+      fullPath: '/app/admin/appointments'
+      preLoaderRoute: typeof AppAdminAppointmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/orders/': {
+      id: '/app/tailor/orders/'
+      path: '/app/tailor/orders'
+      fullPath: '/app/tailor/orders/'
+      preLoaderRoute: typeof AppTailorOrdersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/customers/': {
+      id: '/app/tailor/customers/'
+      path: '/app/tailor/customers'
+      fullPath: '/app/tailor/customers/'
+      preLoaderRoute: typeof AppTailorCustomersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/orders/$id': {
+      id: '/app/tailor/orders/$id'
+      path: '/app/tailor/orders/$id'
+      fullPath: '/app/tailor/orders/$id'
+      preLoaderRoute: typeof AppTailorOrdersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tailor/customers/$id': {
+      id: '/app/tailor/customers/$id'
+      path: '/app/tailor/customers/$id'
+      fullPath: '/app/tailor/customers/$id'
+      preLoaderRoute: typeof AppTailorCustomersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -286,8 +626,25 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardTailorRoute: DashboardTailorRoute,
   OrdersIdRoute: OrdersIdRoute,
   TailorsIdRoute: TailorsIdRoute,
+  AppIndexRoute: AppIndexRoute,
   OrdersIndexRoute: OrdersIndexRoute,
   TailorsIndexRoute: TailorsIndexRoute,
+  AppAdminAppointmentsRoute: AppAdminAppointmentsRoute,
+  AppAdminComplaintsRoute: AppAdminComplaintsRoute,
+  AppAdminDashboardRoute: AppAdminDashboardRoute,
+  AppAdminOrdersRoute: AppAdminOrdersRoute,
+  AppAdminUsersRoute: AppAdminUsersRoute,
+  AppAdminVerificationRoute: AppAdminVerificationRoute,
+  AppTailorAppointmentsRoute: AppTailorAppointmentsRoute,
+  AppTailorDashboardRoute: AppTailorDashboardRoute,
+  AppTailorEarningsRoute: AppTailorEarningsRoute,
+  AppTailorProfileRoute: AppTailorProfileRoute,
+  AppTailorReviewsRoute: AppTailorReviewsRoute,
+  AppTailorSettingsRoute: AppTailorSettingsRoute,
+  AppTailorCustomersIdRoute: AppTailorCustomersIdRoute,
+  AppTailorOrdersIdRoute: AppTailorOrdersIdRoute,
+  AppTailorCustomersIndexRoute: AppTailorCustomersIndexRoute,
+  AppTailorOrdersIndexRoute: AppTailorOrdersIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
