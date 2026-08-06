@@ -21,7 +21,7 @@ export const Route = createFileRoute("/tailors/$id")({
 });
 
 function TailorDetail() {
-  const t = Route.useLoaderData();
+  const t = Route.useLoaderData() as NonNullable<ReturnType<typeof tailors.find>>;
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-md min-h-screen relative pb-28">
