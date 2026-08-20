@@ -30,13 +30,13 @@ function Book() {
             Aisha will visit you tomorrow at {time}. We'll send a reminder 30 minutes before.
           </p>
           <button
-            onClick={() => nav({ to: "/orders" })}
+            onClick={() => nav({ to: "/checkout" })}
             className="mt-8 w-full max-w-xs h-14 rounded-full bg-primary text-primary-foreground font-semibold shadow-[var(--shadow-glow)]"
           >
-            Track your order
+            Continue to payment
           </button>
-          <button onClick={() => nav({ to: "/" })} className="mt-3 text-sm text-muted-foreground font-medium">
-            Back to home
+          <button onClick={() => nav({ to: "/orders" })} className="mt-3 text-sm text-muted-foreground font-medium">
+            Pay later — track your order
           </button>
         </div>
       </MobileShell>

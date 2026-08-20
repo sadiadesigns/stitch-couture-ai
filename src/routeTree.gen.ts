@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as DesignerRouteImport } from './routes/designer'
+import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
@@ -50,6 +51,11 @@ const ProfileRoute = ProfileRouteImport.update({
 const DesignerRoute = DesignerRouteImport.update({
   id: '/designer',
   path: '/designer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookRoute = BookRouteImport.update({
@@ -207,6 +213,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/book': typeof BookRoute
+  '/checkout': typeof CheckoutRoute
   '/designer': typeof DesignerRoute
   '/profile': typeof ProfileRoute
   '/dashboard/admin': typeof DashboardAdminRoute
@@ -241,6 +248,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/book': typeof BookRoute
+  '/checkout': typeof CheckoutRoute
   '/designer': typeof DesignerRoute
   '/profile': typeof ProfileRoute
   '/dashboard/admin': typeof DashboardAdminRoute
@@ -276,6 +284,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/book': typeof BookRoute
+  '/checkout': typeof CheckoutRoute
   '/designer': typeof DesignerRoute
   '/profile': typeof ProfileRoute
   '/dashboard/admin': typeof DashboardAdminRoute
@@ -312,6 +321,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/book'
+    | '/checkout'
     | '/designer'
     | '/profile'
     | '/dashboard/admin'
@@ -346,6 +356,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/book'
+    | '/checkout'
     | '/designer'
     | '/profile'
     | '/dashboard/admin'
@@ -380,6 +391,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/book'
+    | '/checkout'
     | '/designer'
     | '/profile'
     | '/dashboard/admin'
@@ -415,6 +427,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthRoute: typeof AuthRoute
   BookRoute: typeof BookRoute
+  CheckoutRoute: typeof CheckoutRoute
   DesignerRoute: typeof DesignerRoute
   ProfileRoute: typeof ProfileRoute
   DashboardAdminRoute: typeof DashboardAdminRoute
@@ -460,6 +473,13 @@ declare module '@tanstack/react-router' {
       path: '/designer'
       fullPath: '/designer'
       preLoaderRoute: typeof DesignerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book': {
@@ -679,6 +699,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthRoute: AuthRoute,
   BookRoute: BookRoute,
+  CheckoutRoute: CheckoutRoute,
   DesignerRoute: DesignerRoute,
   ProfileRoute: ProfileRoute,
   DashboardAdminRoute: DashboardAdminRoute,
