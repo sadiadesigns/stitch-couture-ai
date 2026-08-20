@@ -27,6 +27,7 @@ const times = [
 function OrderDetail() {
   const { id } = Route.useParams();
   const t = tailors[0];
+  const pay = orderPayments[id];
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-md min-h-screen pb-32 relative">
