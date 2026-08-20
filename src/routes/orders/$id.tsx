@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronLeft, Check, MessageCircle, Star } from "lucide-react";
-import { orderStages, tailors } from "@/lib/mock-data";
+import { orderStages, tailors, orderPayments } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/orders/$id")({
   head: ({ params }) => ({
@@ -27,6 +27,7 @@ const times = [
 function OrderDetail() {
   const { id } = Route.useParams();
   const t = tailors[0];
+  const pay = orderPayments[id];
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-md min-h-screen pb-32 relative">
@@ -52,6 +53,30 @@ function OrderDetail() {
         </div>
 
         <div className="px-6 mt-6">
+          {pay && (
+            <div className="bg-card rounded-2xl p-4 border border-border/50 mb-4">
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-semibold">Payment</p>
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-semibold ${
+                    pay.status === "Paid" ? "bg-emerald-500/12 text-emerald-600" : "bg-amber-500/15 text-amber-600"
+                  }`}
+                >
+                  <span className={`h-1.5 w-1.5 rounded-full ${pay.status === "Paid" ? "bg-emerald-500" : "bg-amber-500"}`} />
+                  {pay.status === "Paid" ? "Paid" : "Pending"}
+                </span>
+              </div>
+              <div className="mt-2 flex items-end justify-between">
+                <p className="text-xs text-muted-foreground">{pay.method}</p>
+                <p className="text-xl font-bold">${pay.amount}</p>
+              </div>
+              {pay.status === "Pending" && (
+                <Link to="/checkout" className="mt-4 grid h-11 place-items-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                  Pay now
+                </Link>
+              )}
+            </div>
+          )}
           <div className="bg-card rounded-2xl p-4 flex items-center gap-3 border border-border/50">
             <img src={t.photo} alt="" className="w-12 h-12 rounded-xl object-cover" />
             <div className="flex-1">
@@ -64,6 +89,7 @@ function OrderDetail() {
             </div>
           </div>
         </div>
+
 
         <section className="px-6 mt-8">
           <h3 className="text-lg font-bold mb-4">Progress timeline</h3>
