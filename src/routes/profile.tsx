@@ -16,7 +16,7 @@ const items = [
   { icon: Ruler, label: "Saved measurements", to: "/profile", meta: "4 saved" },
   { icon: Sparkles, label: "Saved AI designs", to: "/designer", meta: "12" },
   { icon: MapPin, label: "Addresses", to: "/profile", meta: "2" },
-  { icon: CreditCard, label: "Payment methods", to: "/profile", meta: "•• 4242" },
+  { icon: CreditCard, label: "Payment methods", to: "/checkout", meta: "•• 4242" },
 ];
 
 const dashboards = [
