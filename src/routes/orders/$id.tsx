@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronLeft, Check, MessageCircle, Star } from "lucide-react";
-import { orderStages, tailors } from "@/lib/mock-data";
+import { orderStages, tailors, orderPayments } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/orders/$id")({
   head: ({ params }) => ({
