@@ -82,3 +82,11 @@ export const orderStages = [
 ];
 
 export const heroImages = { design1, fabric, hands };
+
+export type PaymentStatus = "Paid" | "Pending";
+
+export const orderPayments: Record<string, { status: PaymentStatus; amount: number; method: string }> = {
+  "STC-2418": { status: "Paid", amount: 249, method: "Visa •••• 4242" },
+  "STC-2410": { status: "Pending", amount: 480, method: "Awaiting payment" },
+  "STC-2401": { status: "Paid", amount: 189, method: "Stitch Wallet" },
+};
