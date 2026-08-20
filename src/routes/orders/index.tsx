@@ -35,6 +35,7 @@ function OrdersList() {
       <div className="px-6 space-y-4">
         {orders.map((o) => {
           const pct = Math.round(((o.stage + 1) / orderStages.length) * 100);
+          const pay = orderPayments[o.id];
           return (
             <Link
               key={o.id}
@@ -51,6 +52,23 @@ function OrdersList() {
                 </div>
                 <ChevronRight className="w-5 h-5 text-muted-foreground" />
               </div>
+
+              {pay && (
+                <div className="mt-3 flex items-center gap-2">
+                  <span
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-semibold ${
+                      pay.status === "Paid"
+                        ? "bg-emerald-500/12 text-emerald-600"
+                        : "bg-amber-500/15 text-amber-600"
+                    }`}
+                  >
+                    <span className={`h-1.5 w-1.5 rounded-full ${pay.status === "Paid" ? "bg-emerald-500" : "bg-amber-500"}`} />
+                    {pay.status === "Paid" ? "Paid" : "Payment pending"}
+                  </span>
+                  <span className="text-xs font-semibold text-muted-foreground">${pay.amount}</span>
+                </div>
+              )}
+
 
               <div className="mt-4">
                 <div className="flex items-center justify-between mb-2">
