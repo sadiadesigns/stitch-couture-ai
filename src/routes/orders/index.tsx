@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MobileShell, PageHeader } from "@/components/MobileShell";
-import { tailors, orderStages } from "@/lib/mock-data";
+import { tailors, orderStages, orderPayments } from "@/lib/mock-data";
 import { ChevronRight } from "lucide-react";
 
 export const Route = createFileRoute("/orders/")({
